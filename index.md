@@ -1,44 +1,12 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/DarkEmbers/Java/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DarkEmbers/Java/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Java
 
 Alrighty, here's a tutorial on basic Java Programming!
 
-```markdown
+Here's the stuff you will see when starting your Java project:
+1. A Class with the same name of your project
+2. A main function where you will write your code
+
+```java
 public class MyClass
 {
     public static void main(String[] args)
@@ -49,13 +17,10 @@ public class MyClass
 
 }
 ```
-
-Here's the stuff you will see when starting your Java project:
-1. A Class with the name of your project
-2. A main function where you will write your code
+### Print Statements and Variables
 
 The first thing to try is a simple Print Statement:
-```markdown
+```java
 System.out.println("Hello World");
 ```
 This will print a statement onto the console.
@@ -63,20 +28,20 @@ This will print a statement onto the console.
 Next are variables, these are important as you'll constantly use them in every program you write!
 
 The main variable types to know are:
-- Integer - A whole number e.g. 1, 2, 3. Takes 4 bytes of memory.
-- Long - A whole number, but takes 8 bytes of memory.
-- Short - A whole number, but takes 2 bytes of memory.
-- Float - A decimal number e.g. 1.45, 9.992, 54.1642. Takes 4 bytes of memory.
-- Double - A decimal number, but takes 8 bytes of memory.
-- Boolean - Can either be true or false. Takes 1 byte of memory.
-- Char - Contains a single character e.g. 1, a, c, 9. Takes 2 bytes of memory.
-- String - A string of chars. Though it isn't a primitive type, Java has a native String class.
+- ```Integer``` - A whole number e.g. 1, 2, 3. Takes 4 bytes of memory.
+- ```Long``` - A whole number, but takes 8 bytes of memory.
+- ```Short``` - A whole number, but takes 2 bytes of memory.
+- ```Float``` - A decimal number e.g. 1.45, 9.992, 54.1642. Takes 4 bytes of memory.
+- ```Double``` - A decimal number, but takes 8 bytes of memory.
+- ```Boolean``` - Can either be true or false. Takes 1 byte of memory.
+- ```Char``` - Contains a single character e.g. 1, a, c, 9. Takes 2 bytes of memory.
+- ```String``` - A string of chars. Though it isn't a primitive type, Java has a native String class.
 
-Different amounts of memory means they can hold different amounts of data.
-E.g. a short can hold numbers between -32,768 and 32,767 (inclusive). But an int can hold numbers between -2,147,483,648 to 2,147,483,647 (inclusive).
+> Different amounts of memory means they can hold different amounts of data.
+> E.g. a short can hold numbers between -32,768 and 32,767 (inclusive). But an int can hold numbers between -2,147,483,648 to 2,147,483,647 (inclusive).
 
 Variables are defined by specifying the variable type and a variable name as such:
-```markdown
+```java
 int MyInt = 10;
 long MyLong = 1304;
 short MyShort = 3;
@@ -89,13 +54,144 @@ String MyString = "Hello"; // You must use "Double quotes" when defining a Strin
 
 Lets write some code with what we know so far!
 
-In our main function, we'll create a String variable called Name and an int variable called Age, and assign it to "Bob" and 25 respectively:
-```markdown
+In our main function, we'll create a String variable called Name and an int variable called Age, and assign them to "Bob" and 25 respectively:
+```java
 String Name = "Bob";
 int Age = 25;
 ```
 Now lets print out a scentence about Bob:
-```markdown
+```java
 System.out.println("Hello " + Name + ", you are " + Age + " years old.");
 ```
-Note that the + sign allows you to concatenate variables and string scentences together in the Print Statement.
+> Note: The + sign allows you to concatenate variables and string scentences together in the Print Statement.
+
+Finally you should have something like this:
+```java
+public class MyClass
+{
+    public static void main(String[] args)
+    {
+        // Your code goes here
+        String Name = "Bob";
+        int Age = 25;
+
+        System.out.println("Hello " + Name + ", you are " + Age + " years old.");
+    }
+
+}
+```
+
+This should result in the following output:
+```markdown
+Hello Bob, you are 25 years old.
+```
+
+Congrats, you've written your first Program!
+
+### Inputs
+
+Moving on, we will learn to take in user input from the console.
+Inputs are taken using a Java class called Scanner. To import Scanner, at the top of your file add:
+```java
+import java.util.Scanner;
+```
+To create an instance of the Scanner class, we create a new variable of type Scanner.
+```java
+Scanner scan = new Scanner(System.in);
+```
+> Don't forget to close your Scanner after you're done using it by writing: ```scan.close()```
+
+Scanner is a class that reads input streams and allows us to read data from those streams. To access functions from a class we must use:
+```java
+scan.YourFunctionName()
+```
+For this example we will have the user input their name and assign it to a String variable. Lucky for us, the Scanner class has a function to read different data type inputs.
+```java
+// Scanner methods to read user inputs:
+scan.next(); // Reads the first word from the input
+scan.nextLine(); // Reads the entire line from the input
+scan.nextInt(); // Reads the next Integer
+scan.nextFloat(); // Reads the next Float
+scan.nextBoolean(); // Reads the next Boolean
+// etc...
+```
+
+Although we can read input from the user, it needs to be stored for later use.
+So we can create a variable and assign it to one of these Scanner functions.
+Lets ask the user for their name:
+```java
+System.out.println("What is your name?");
+String Name = scan.nextLine();
+```
+Lets break this down, first, we are using a print statement to ask the user for their name. We know that a Name is of type String, so we can use ```scan.nextLine()``` to read String input. Then we are assigning the value we got from the input to a String variable called Name.
+
+Once we've stored the input we can use the variable as we normally would:
+```java
+System.out.println("Hello " + Name);
+```
+
+Similarly if you want to read int data and store it to a variable named Age, write:
+```java
+int Age = scan.nextInt();
+```
+
+So you should have something like this:
+```java
+import java.util.Scanner;
+
+public class MyClass
+{
+    public static void main(String[] args)
+    {
+        // Your code goes here
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("What's your name?");
+        String Name = scan.nextLine();
+
+        System.out.println("What's your age");
+        int Age = scan.nextInt();
+
+        System.out.println("Heya " + Name + " you're " + Age + " years old, yowza!");
+
+    }
+
+}
+```
+Try running it and see what happens.
+
+### If, Else if, Else Statements
+
+If Statements are one of the fundamentals of programming that allow you to change your code from a series of inputs and outputs, to a logical program with complex functionality!
+
+#### Operators
+
+Before we dive into if statements we need a good knowledge of the operators used.
+```markdown
+Basic arithmetic signs are used too: +, -, *, /, ()
+Then logical operators:
+1. == Equals
+2. >= Greater than or Equal to
+3. <= Less than or Equal to
+4. || OR
+5. && AND
+```
+> Note: The ```==``` sign is used to check equality in a condition while the ```=``` sign is used to assign values.
+
+The body of an If Statement looks like this:
+```java
+if (/* Condition goes here */)
+{
+
+}
+else if (/* Another condition goes here */)
+{
+
+}
+else // Will run if all else fails
+{
+
+}
+```
+If Statements only run code if the conditions (in the parenthesis) is true.
+Different operators are used to formulate conditions to be used in if statements.
