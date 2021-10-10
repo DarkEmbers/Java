@@ -103,7 +103,7 @@ Scanner scan = new Scanner(System.in);
 
 Scanner is a class that reads input streams and allows us to read data from those streams. To access functions from a class we must use:
 ```java
-scan.YourFunctionName()
+scan.YourFunctionName();
 ```
 For this example we will have the user input their name and assign it to a String variable. Lucky for us, the Scanner class has a function to read different data type inputs.
 ```java
@@ -160,7 +160,7 @@ public class MyClass
 ```
 Try running it and see what happens.
 
-### If, Else if, Else Statements
+### If, Else if, and Else Statements
 
 If Statements are one of the fundamentals of programming that allow you to change your code from a series of inputs and outputs, to a logical program with complex functionality!
 
@@ -195,3 +195,66 @@ else // Will run if all else fails
 ```
 If Statements only run code if the conditions (in the parenthesis) is true.
 Different operators are used to formulate conditions to be used in if statements.
+
+To get an idea of how to use these operators in conjunction with If Statements, lets write a simple conditional statement. 
+We will ask the user for their age, assign it to an int variable, and check if they're old enough to drive.
+> It isn't neccesary to have ```else if``` and ```else``` in every conditional statement we make.
+
+```java
+/**
+* You can also declare your variables and assign them 
+* later. Though you will get an error if you try to use
+* unassigned variables.
+*/
+
+int Age;
+
+Scanner scan = new Scanner(System.in);
+System.out.println("How old are ya:");
+Age = scan.nextInt();
+
+if (Age < 18)
+{
+    System.out.println("Yikes you're to young to drive, fella!");
+}
+else if (Age > 40)
+{
+    System.out.println("Wowee, you're old, of course you can drive.");
+}
+else if (Age >= 18)
+{
+    System.out.println("Woohooo You can drive! Enjoy the Nissan Sunny lol.");
+}
+
+scan.close();
+```
+The final else if:
+```java
+else if (Age >= 18)
+{
+    System.out.println("Woohooo You can drive! Enjoy the Nissan Sunny lol.");
+}
+```
+can be replaced with:
+```java
+else
+{
+    System.out.println("Woohooo You can drive! Enjoy the Nissan Sunny lol.");
+}
+```
+to achieve the same result, as ```(Age >= 18)``` is the only possibility left.
+> If any of the conditions are true, then any of the other Else Ifs and Elses in the statement will be ignored. If you would like to check those conditions anyways, create seperate If Statements.
+
+#### Equality of Strings
+
+Since String is not a primitive data type and is instead a class built on top, all String variables will have available functions from the String class.
+
+For Example, you may have noticed if you put a String variable == a value, the condition is always false. To check String equality you must use the String function ```equals()``` or ```equalsIgnoreCase()``` to ignore case sensitivity.
+It's used like this:
+```java
+if (name.equals("Naruto"))
+{
+
+}
+```
+This check whether the variable ```name``` is equal to Naruto
