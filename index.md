@@ -257,4 +257,4 @@ if (name.equals("Naruto"))
 
 }
 ```
-This check whether the variable ```name``` is equal to Naruto
+This will check whether the variable ```name``` is equal to Naruto
